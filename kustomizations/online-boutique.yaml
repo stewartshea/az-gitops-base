@@ -3,11 +3,12 @@ apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
   name: online-boutique
-  namespace: gitops
+  namespace: flux-system 
 spec:
   interval: 1m0s
   sourceRef:
     kind: GitRepository
     name: main
+    namespace: gitops
   path: ./online-boutique
   prune: true
